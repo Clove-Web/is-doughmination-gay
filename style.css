@@ -23,16 +23,11 @@ body {
 
     text-align: center;
 
-    /* Makes the text readable against the image */
     text-shadow:
         0 2px 8px rgba(0, 0, 0, 0.8),
         0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-/* The pills are inline-block so they shrink-wrap their text. That only stacks
-   them if they're flex items — as direct children of <body> they were, but the
-   <main> wrapper puts them back in normal flow, where two inline-blocks sit
-   side by side. So <main> carries the same column layout <body> does. */
 main {
     display: flex;
     flex-direction: column;
@@ -42,25 +37,21 @@ main {
 h1,
 p,
 footer > div {
-    /* Floating text */
     display: inline-block;
 
     margin: 0.5rem;
     padding: 0.35em 0.7em;
 
-    /* Highlight behind the text */
     background: rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
 
     border-radius: 12px;
 
-    /* Subtle floating/shadow effect */
     box-shadow:
         0 8px 30px rgba(0, 0, 0, 0.35),
         0 0 20px rgba(255, 255, 255, 0.08);
 
-    /* Prevent the highlight from stretching across the page */
     width: fit-content;
 }
 
@@ -73,9 +64,6 @@ p {
     font-size: clamp(1.25rem, 4vw, 2rem);
 }
 
-/* Counter + source link, stacked in the bottom corner. The footer holds the
-   positioning so both pills travel together; it's fixed rather than in flow
-   because the body is a centring flex column. */
 footer {
     position: fixed;
     right: 0.75rem;
@@ -92,25 +80,16 @@ footer {
 footer > div {
     margin: 0;
     border-radius: 8px;
-
-    /* Subtler than the main text — present, but not competing with it. */
     opacity: 0.75;
 
-    /* Keeps the icon on the text's baseline row. */
     display: flex;
     align-items: center;
     gap: 0.4em;
 }
 
-/* The icon is a bare viewBox with no width/height, so without an explicit
-   size it would fall back to the 300x150 default for replaced elements. */
 footer img {
     width: 1em;
     height: 1em;
-
-    /* The icon is a separate SVG document loaded through <img>, so page CSS
-       can't reach its paths — and they have no fill, so they render black.
-       Inverting the flat black artwork is what actually makes it white. */
     filter: invert(1);
 }
 
