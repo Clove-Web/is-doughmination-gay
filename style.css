@@ -1,0 +1,62 @@
+:root {
+    min-height: 100%;
+    background: #000 url("https://m.doughmination.gay/img/bg/main.png") center center / cover fixed no-repeat;
+}
+
+html,
+body {
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: white;
+
+    text-align: center;
+
+    /* Makes the text readable against the image */
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+h1,
+p {
+    /* Floating text */
+    display: inline-block;
+
+    margin: 0.5rem;
+    padding: 0.35em 0.7em;
+
+    /* Highlight behind the text */
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    border-radius: 12px;
+
+    /* Subtle floating/shadow effect */
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.35),
+        0 0 20px rgba(255, 255, 255, 0.08);
+
+    /* Prevent the highlight from stretching across the page */
+    width: fit-content;
+}
+
+h1 {
+    font-size: clamp(3rem, 10vw, 7rem);
+    line-height: 1;
+}
+
+p {
+    font-size: clamp(1.25rem, 4vw, 2rem);
+}
